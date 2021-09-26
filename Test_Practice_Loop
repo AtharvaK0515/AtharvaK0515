@@ -1,0 +1,29 @@
+// CPP_335_O5_1520_07
+#include <iostream>
+#include <fstream>
+#include <sstream>
+using namespace std;
+// function to get words from the library file
+void getWordsFromLibrary() {
+	ifstream infile;
+	string InSTRING;
+	string InSTRING2;
+	int wordsInPhrase;
+	cout << "Please enter the number of words in the phrase: ";
+	cin >> wordsInPhrase;
+  // Pull certain number of lines though words stay the same regardless
+	if (wordsInPhrase < 0) {
+		cout << "ERROR";
+	} else {
+		infile.open("lib.txt");
+		for (int a = 0; a != wordsInPhrase; a++) {
+			getline(infile, InSTRING);
+			cout << "The result phrase: " << InSTRING;
+		}
+		infile.close();
+	}
+}
+int main() {
+	getWordsFromLibrary();
+	return 0;
+}
